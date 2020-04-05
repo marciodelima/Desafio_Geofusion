@@ -1,0 +1,16 @@
+
+a. Parabéns! Sua aplicação está agora em produção, e, assim, você passa a ser responsável por ela! Como você garantirá que ela está respondendo conforme o esperado?
+Criando métodos e rotinas automatizadas de monitoramento da aplicação, através de testes simples de get da URL para ver se está ativa e retornando e coleta e análise dos logs. Existem diversas ferramentas de mercado, teria que analisar a ferramenta que a empresa possui e caso ainda não tenha, podemos usar por exemplo o ElasticSearch para analisar erros, problemas e comportamentos da aplicação. 
+
+b. É possível que, com o tempo, este modelo da Campifarma diminua a sua performance de predição? Em caso positivo, porque isso ocorre e como você solucionaria esse problema?
+Sim, é possível. Nosso país, sofre de constantes mudanças políticas, econômicas e sociais assim como as empresas e pessoas. Mapas também mudam com o tempo. Desta forma, o modelo deve ter uma rotina de re-treinamento e avaliação, esse intervalo vai depender do negócio da empresa, mas recomendo no mínimo um intervalo mensal de novos treinamentos e re-deploy em produção. 
+
+c. Na sua visão, qual é a diferença de responsabilidades e de entregas de um Engenheiro de Machine Learning e de um Cientista de Dados?
+Ambos devem conhecer o mundo do outro para que os dois profissionais se ajudem e por consequência resolvam o problema de negócio da melhor forma. O Cientista tem sua maior responsabilidade em gerar análise e/ou insights dos dados criando um modelo estatístico para previsão futura do objeto de estudo. O Engenheiro é responsável em colocar o modelo preditivo, criado pelo Cientista, em produção para funcionar. Em muitas situações, o Engenheiro além disso, irá fazer a integração das aplicações legadas com o modelo via serviços, etc.; 
+
+d. A Campifarma cresceu muito após a utilização do modelo que foi colocado em produção por você. Assim eles desejam expandir para todo o Brasil, e para o seu estudo de expansão desejam prever o faturamento em cada esquina o país, o que compreende por cerca de 10 milhões de pontos. Como você escalaria o seu serviço para responder à estas 10 milhões de requisições?
+Bom, eu faria uma evolução do container docker atual para um EC2 auto-scaling com lambda na AWS, tornando numa arquitetura serveless. A AWS é só um exemplo, as demais clouds do GCP e da Azure possuem as mesmas arquiteturas e funcionalidades. 
+Pensando em manter os fontes já existentes, podemos utilizar o Heroku com auto-scaling. 
+Além disso, eu sugiro colocar o micro-serviço num API Gateway para medir e monitorar o uso da API além de gerar reports de monetização para cada cliente dependendo do seu plano de acesso. 
+ 
+
