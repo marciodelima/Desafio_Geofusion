@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head><meta charset="utf-8"><title>Desafio GeoFusion - Marcio de Lima</title></head>
+
+<body>
+  <!-- setup ajax -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"> 
+  </script>
+  <script>window.jQuery || document.write('<script src="{{url_for('static', filename = 'jquery.js') }}">\x3C/script>')</script>
+  <script type=text/javascript>
+      $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+
+  <div id="container">
+    <script type=text/javascript>
+      $(function() {
+        $('a#executar').bind('click', function() {
+          if ($('input[name="latitude"]').val().length > 0 && $('input[name="longitude"]').val().length > 0 ) {
+            $("#running").text('Executando o modelo...');
+            $.getJSON($SCRIPT_ROOT + '/predict/' + 'lat=' + $('input[name="latitude"]').val() + '&lng=' + $('input[name="longitude"]').val()
+            , function(data) {
+              $("#output").text(JSON.stringify(data, null, 2));
+            });
+          } else {
+		  alert('Parametros obrigatorios');
+	  }
+          return false;
+        });
+      });
+    </script>
+    <h1>Coloque as informações abaixo para efetuar a previsão.</h1>
+    <p>
+      <br/>
+      Latitude: <input type=text name=latitude value=-22.982356215> Longitude: <input type=text name=longitude value=-46.9112167395> <br/>
+      <a href=# id=executar>Executar</a> <br/>
+    </p>
+      <p><span id=running></span></p>
+    <pre id=output>Retorno</pre>
+  </div>
+</body>
+</html>
