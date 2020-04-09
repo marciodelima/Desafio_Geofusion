@@ -17,6 +17,7 @@
         $('a#executar').bind('click', function() {
           if ($('input[name="latitude"]').val().length > 0 && $('input[name="longitude"]').val().length > 0 ) {
             $("#running").text('Executando o modelo...');
+            $("#output").text('');
             $.getJSON($SCRIPT_ROOT + '/predict/' + 'lat=' + $('input[name="latitude"]').val() + '&lng=' + $('input[name="longitude"]').val()
             , function(data) {
               $("#output").text(JSON.stringify(data, null, 2));

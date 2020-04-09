@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+# pylint: disable=missing-docstring
 # Importando as bibliotecas
 from flask import Flask, render_template
 from flask_restful import Api
@@ -17,5 +19,5 @@ def home():
 
 #Main
 if __name__ == '__main__':
-    APP.run(debug=True)
+    APP.run(debug=False)
     APP.run(port=5000)
