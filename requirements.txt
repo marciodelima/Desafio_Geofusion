@@ -4,3 +4,4 @@ uwsgi
 shapely
 pyproj
 pandas
+sklearn
