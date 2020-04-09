@@ -10,7 +10,9 @@ Este projeto está em running no HEROKU, desta forma, para seu uso basta chamar 
 
 ## Links: 
 
-Serviço: https://desafiogeofusion.herokuapp.com/predict/lat=????&lng=????
+Serviço direto: https://desafiogeofusion.herokuapp.com/predict/lat=????&lng=????
+
+Exemplo: https://desafiogeofusion.herokuapp.com/predict/lat=-22.8232257917&lng=-47.0758807513
 
 Pagina de Teste: https://desafiogeofusion.herokuapp.com/
 
