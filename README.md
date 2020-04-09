@@ -24,6 +24,6 @@ Esse projeto foi implementado em Python 3.7, FLASK, HTML e Jquery. O deploy foi 
 
 ## Considerações
 
-O modelo foi treinado pelos scripts fornecidos pela GeoFusion, mas seu maior valor no dataset era no máximo 14.000, sendo impossível o modelo preditivo alcançar os valores de 96040.6114295958 e 78410.6259787695 servidos como exemplo. Além disso, o retorno de numero de concorrentes como float não faz sentido, pois são valores inteiros. 
+O modelo foi treinado pelos scripts fornecidos pela GeoFusion, mas seu maior valor no dataset era no máximo R$ 17050.705936673578, sendo impossível o modelo preditivo alcançar os valores de 96040.6114295958 e 78410.6259787695 servidos como exemplo. Além disso, o retorno de numero de concorrentes como float não faz sentido, mas foi feito conforme o pedido via serviço, no HTML, esses valores aparecem como inteiros. 
 
 
